@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show,:upvote,:downvote ]
   before_action :authorized_user, :only => [:edit,:update,:destroy]
 
   def index
@@ -20,7 +20,7 @@ class LinksController < ApplicationController
   def edit
   end
 
-
+  
   def create
     @link = current_user.links.build(link_params)
 
@@ -59,6 +59,18 @@ class LinksController < ApplicationController
     end
   end
 
+def upvote
+  @link = Link.find(params[:id])
+  @link.upvote_by current_user
+  redirect_to :back
+end
+ 
+def downvote
+  @link = Link.find(params[:id])
+  @link.downvote_by current_user
+  redirect_to :back
+end
+  
   private
    
   def authorized_user
