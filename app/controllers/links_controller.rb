@@ -4,7 +4,12 @@ class LinksController < ApplicationController
   before_action :authorized_user, :only => [:edit,:update,:destroy]
 
   def index
-    @links = Link.all
+   @links = Link.search(params[:search])
+  #  if params[:search]
+  #   @links = Link.search(params[:search]).order("created_at DESC")
+  # else
+  #   @links = Link.all.order('created_at DESC')
+  # end
   end
 
   def show
