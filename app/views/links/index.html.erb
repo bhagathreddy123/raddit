@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<small class="author">Submitted <%#= time_ago_in_words(link.created_at) %> by <%#= link.user.name %></small>
-
+<%= link_to "ajaxlink", about_us_links_path, remote: true %>
+<div id="about">
 <h1>Listing Links</h1>
 
 <table>
@@ -28,7 +28,7 @@
 </table>
 
 
-
+</div>
 <br>
 
 <%= link_to 'New Link', new_link_path %>

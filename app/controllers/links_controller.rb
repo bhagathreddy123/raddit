@@ -71,6 +71,12 @@ def downvote
   redirect_to :back
 end
   
+def about_us
+  respond_to do |format|
+  format.js
+end
+end
+
   private
    
   def authorized_user
@@ -86,3 +92,5 @@ end
     params.require(:link).permit(:title, :url)
   end
 end
+
+
