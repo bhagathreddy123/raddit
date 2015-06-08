@@ -11,14 +11,11 @@ belongs_to :user
   end
 end
 
-
+# second  Way of simple search
 
 # def self.search(query)
 #   where("title like ?", "%#{query}%") 
 # end
-
-
-
 
 end
 
