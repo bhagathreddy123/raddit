@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
  
-
-
   devise_for :users
   #root to: "links#index"
   resources :links do
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
    resources :comments
   end
   resource :geo_ip_request, controller: :geo_ip_request
-
+  resources :homes, only: [:index]
   root to: "geo_ip_request#new"
 #get "/about_us" => "links#about_us"
 end

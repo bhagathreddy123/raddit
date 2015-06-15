@@ -18,6 +18,8 @@ gem 'simple_form', '~>3.0.2'
 gem 'bootstrap-sass', '~> 3.2.0.2' 
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'geoip', '~> 1.4.0'
+gem 'slim', '~> 3.0.6'
+gem 'slim-rails', '~> 3.0.1'
 group :development, :test do
 gem 'byebug'
 gem 'web-console', '~> 2.0'
