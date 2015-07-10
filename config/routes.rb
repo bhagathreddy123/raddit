@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
   devise_for :users
   root to: "links#index"
   resources :links do
@@ -16,5 +15,13 @@ Rails.application.routes.draw do
   resources :homes, only: [:index]
   #root to: "geo_ip_request#new"
 get "/about_us" => "links#about_us"
+resources :games do
+  collection do
+    get :ajaxtest
+  end
+  resources :players do
+   # get :delete
+  end
+end
 end
 

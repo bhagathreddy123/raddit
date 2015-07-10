@@ -1,0 +1,6 @@
+<% @game.players.each do |player| %>
+<%= player.name %>
+<%= player.country %>
+<%= link_to "Edit",edit_game_player_path(player.game,player) %>
+<%=link_to "Delete", game_player_path(player.game, player), :method => :delete%>
+<%end%>
