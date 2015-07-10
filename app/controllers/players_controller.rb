@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  
+
   def create
     @game = Game.find(params[:game_id])
     @player = @game.players.create(player_params)
@@ -11,31 +11,39 @@ class PlayersController < ApplicationController
   def edit
     @game = Game.find(params[:game_id]) 
     @player = @game.players.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
   
   def update
     @game = Game.find(params[:game_id])
     @player = @game.players.find(params[:id])
-    if @player.update(player_params)
-      redirect_to game_path(@game)
-    else
-      render :action => :edit
+    @player.update(player_params)
+    respond_to do |format|
+      format.js
     end
   end
 
   
+
+  
+  def delete
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+  end
+
   def destroy
-    @game= Game.find(params[:game_id])
-    @player = @game.players.find(params[:id])
-    @player.destroy
-    redirect_to game_path(@game)
-  end
-  
-  
-  
-  private
-  
-  def player_params
-    params.require(:player).permit!
-  end
+   @game= Game.find(params[:game_id])
+   @player = @game.players.find(params[:id])
+   @player.destroy
+ end
+
+
+ private
+ 
+ def player_params
+  params.require(:player).permit!
+end
+
 end

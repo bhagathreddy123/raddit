@@ -1,6 +1,9 @@
 <% @game.players.each do |player| %>
+<div id="player-<%= player.id %>"> 
 <%= player.name %>
 <%= player.country %>
-<%= link_to "Edit",edit_game_player_path(player.game,player) %>
-<%=link_to "Delete", game_player_path(player.game, player), :method => :delete%>
+<%= link_to "Edit",edit_game_player_path(player.game,player), :class => "player_edit", :remote => :true %>
+<%=link_to "Delete", game_player_path(player.game, player), :method => :delete, :remote => :true %>
+</div>
 <%end%>
+

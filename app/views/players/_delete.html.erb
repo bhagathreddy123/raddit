@@ -1,0 +1,10 @@
+  <h3>Delete Player</h3>
+
+
+<ul class="errors"></ul>
+Are you sure you wish to delete <b><%= @player.game.name %></b>?
+</div>
+
+
+  <%= link_to "Yes, Delete This Player", game_player_path(player.game,player), method: :delete, remote: true, class: "btn btn-danger" %>
+  <%= link_to "No, Please Don't", "#", class: "btn", data: { dismiss: "modal" } %>
