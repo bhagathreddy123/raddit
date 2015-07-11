@@ -127,3 +127,4 @@ game/show.html.erb
 <%= link_to "Back", games_path, :class => "btn btn-default" %>    
 -------------------------------------------------------------
 
+Game-players ajax edit delete operations working.

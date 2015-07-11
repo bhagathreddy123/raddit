@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150710055922) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "user_id",    limit: 4
-    t.string   "video",      limit: 255
   end
 
   add_index "links", ["user_id"], name: "index_links_on_user_id", using: :btree

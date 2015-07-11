@@ -10,8 +10,10 @@ class PlayersController < ApplicationController
   
   def edit
     @game = Game.find(params[:game_id]) 
+    @players = @game.players
     @player = @game.players.find(params[:id])
     respond_to do |format|
+      format.html
       format.js
     end
   end

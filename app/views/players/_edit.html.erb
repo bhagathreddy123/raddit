@@ -1,5 +1,5 @@
-
-<%= form_for ([@game,@player]), :remote => :true, :method => "PUT"  do |f|  %>
+<h2> Edit Player</h2>
+<%= form_for([@game,@player], :remote => :true, :method => "PUT" ) do |f|  %>
   <div class="form-group">
       <%= f.label :Name %>
       <%= f.text_field :name %>
@@ -11,4 +11,3 @@
       <%= f.submit %>
 
 <%end%>
-<%#= form_for ([@game,@player]), :method => "put" do |f|  %>

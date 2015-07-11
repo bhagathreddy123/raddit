@@ -5,13 +5,17 @@
 
 <h2>Players information</h2>
 <div class="lists">
-<%= render "players/index" %>
+<%= render :partial => "players/index" %>
 </div>
 
 
 <div class="player_edit">
 <h2>Add Player </h2>
-<%= render "players/form" %>
+<%= render :partial => "players/form" %>
 </div>
 
 <%= link_to "Back", games_path, :class => "btn btn-default" %>    
+
+
+
+
