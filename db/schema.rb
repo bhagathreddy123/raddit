@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710055922) do
+ActiveRecord::Schema.define(version: 20150719064518) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "link_id",    limit: 4
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20150710055922) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   create_table "links", force: :cascade do |t|

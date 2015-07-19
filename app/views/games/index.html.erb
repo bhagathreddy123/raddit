@@ -4,28 +4,31 @@
 
 
 <table class="table table stripped">
-    <tr>
-        <th>name</th>
-        <th> </th>
-    </tr>
+  <tr>
+    <th>name</th>
+    <th> </th>
+  </tr>
 
-    <tr>
-        <% @games.each do |game| %>
-          <td><%= game.name %> </td> 
-          <td>
-  
-              <%= link_to "show", game_path(game), :class => "btn btn-primary" %>    
-              <%= link_to "Edit", edit_game_path(game), :class => "btn btn-info"  %>  
-              <%= link_to "Delete", game_path(game), :method => :delete,:class => "btn btn-danger"  %>       
-          </td>
-      </tr>
+  <tr>
+    <% @games.each do |game| %>
+    <td><%= game.name %> </td> 
+    <td><%= game.start_date.strftime("%d-%m-%Y")%> </td> 
+    <td><%= game.end_date.strftime("%d-%m-%Y")%> </td> 
 
-    <%end%>
+    <td>
+
+      <%= link_to "show", game_path(game), :class => "btn btn-primary" %>    
+      <%= link_to "Edit", edit_game_path(game), :class => "btn btn-info"  %>  
+      <%= link_to "Delete", game_path(game), :method => :delete,:class => "btn btn-danger"  %>       
+    </td>
+  </tr>
+
+  <%end%>
 
 
 </table>
 
 
-              <%= link_to "New", new_game_path, :class => "btn btn-default" %>    
-             <%= link_to "ajaxlink", ajaxtest_games_path,:class => "btn btn-default",  :id => "ajaxcall", :remote => :true%>
+<%= link_to "New", new_game_path, :class => "btn btn-default" %>    
+<%= link_to "ajaxlink", ajaxtest_games_path,:class => "btn btn-default",  :id => "ajaxcall", :remote => :true%>
 

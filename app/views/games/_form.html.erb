@@ -2,7 +2,10 @@
   <div class="form-group">
   <%= f.label :name %>
  <%= f.text_field :name %>
+     <div>Start Date: &nbsp;&nbsp;&nbsp;<%= f.date_select("start_date", {:order => [:day, :month, :year], :end_year => Time.now.strftime('%Y').to_i + 30,  :start_year => Time.now.strftime('%Y').to_i, :use_month_numbers => true}, {:style => "width: 71px;"}) %></div>
+    <div>End Date: &nbsp;&nbsp;&nbsp;<%= f.date_select("end_date", {:order => [:day, :month, :year], :end_year => Time.now.strftime('%Y').to_i + 30,  :start_year => Time.now.strftime('%Y').to_i, :use_month_numbers => true}, {:style => "width: 71px;"}) %></div>
     </div>
+
 <%= f.submit %>
 <%end%>
 
